@@ -1,10 +1,10 @@
-import test from "@playwright/test";
+import test, { expect } from "@playwright/test";
 import { HomePage } from "../Pages/Home.po";
 import { SearchPage } from "../Pages/search.po";
 
 test('Add to Cart Functionality', async ({ page }) => {
     // Navigate to the home page
-    await page.goto('https://www.amazon.com/');
+    await page.goto('');
 
     // Search for a product
     await HomePage.searchInputAs(page, 'White shirt');
@@ -17,7 +17,7 @@ test('Add to Cart Functionality', async ({ page }) => {
     await SearchPage .clickAddToCartByIndex(page, 2);
     await SearchPage.clickAddToCartOnPopUpWindow(page);
 
-    await SearchPage.getTittle(page).isVisible();
+    await expect(SearchPage.getTittle(page)).toBeVisible();
     
 
 });
