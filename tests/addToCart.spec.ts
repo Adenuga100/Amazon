@@ -14,10 +14,8 @@ test('Add to Cart Functionality', async ({ page }) => {
     await SearchPage.clickAddToCartByIndex(page, 1);
     // await page.waitForTimeout(3000);
     await SearchPage.clickAddToCartOnPopUpWindow(page);
-
     await SearchPage .clickAddToCartByIndex(page, 2);
     await SearchPage.clickAddToCartOnPopUpWindow(page);
-
 
     await SearchPage.getTittle(page).isVisible();
     
