@@ -4,7 +4,7 @@ import { Locator, Page } from "@playwright/test";
 export class SearchPage {
 
 
-      static async addToCartByIndex( page: Page, index: number) : Promise<void> {
+      static async clickAddToCartByIndex( page: Page, index: number) : Promise<void> {
        return await page.locator('[type="button"][id*="a-autoid"]').filter({hasText: 'Add to cart'}).nth(index).click();
          
       //   let addtocart = page.getByRole('button', { name: 'Add to cart' });
@@ -16,7 +16,7 @@ export class SearchPage {
          //  return await addToCart.click();
       }
 
-    static async addToCartMinWindow( page: Page) : Promise<void> {
+    static async clickAddToCartOnPopUpWindow( page: Page) : Promise<void> {
       let addToCart = page.getByRole('button', { name: 'Add to cart' });
       return await addToCart.click();
       

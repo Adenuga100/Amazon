@@ -8,15 +8,15 @@ test('Add to Cart Functionality', async ({ page }) => {
 
     // Search for a product
     await HomePage.searchInputAs(page, 'White shirt');
-    await HomePage.pressEnter(page);
-    // await HomePage.clickSearchButton(page);
+    // await HomePage.pressEnter(page);
+    await HomePage.clickSearchButton(page);
     // Add the first product in the search results to the cart
-    await SearchPage.addToCartByIndex(page, 1);
+    await SearchPage.clickAddToCartByIndex(page, 1);
     // await page.waitForTimeout(3000);
-    await SearchPage.addToCartMinWindow(page);
+    await SearchPage.clickAddToCartOnPopUpWindow(page);
 
-    await SearchPage .addToCartByIndex(page, 2);
-    await SearchPage.addToCartMinWindow(page);
+    await SearchPage .clickAddToCartByIndex(page, 2);
+    await SearchPage.clickAddToCartOnPopUpWindow(page);
 
 
     await SearchPage.getTittle(page).isVisible();
