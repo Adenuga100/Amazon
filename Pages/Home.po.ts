@@ -4,9 +4,8 @@ import { Locator, Page } from "@playwright/test";
 export class HomePage {
 
       static async searchInputAs( page: Page, product: string,) : Promise<void> {
-        let searchInput = page.locator('#twotabsearchtextbox',);
-        // return await searchInput.waitFor({ state: 'visible', timeout: 10000 }).then( async () => {
-       return await searchInput.fill(product); /*});*/
+        return await page.locator('#twotabsearchtextbox').fill(product);
+
       }
       
 
