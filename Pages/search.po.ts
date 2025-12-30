@@ -36,7 +36,7 @@ export class SearchPage {
    }
 
    static getTittle( page: Page) : Locator {
-     return page.locator('.a-row a-size-base');
+     return page.getByText('Check each product page for other buying options. Price and other details may vary based on product size and color.');
    }
     
 }
